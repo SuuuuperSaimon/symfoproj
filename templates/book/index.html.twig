@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BookController!{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <table border="1">
+    {% for book in books|sort %}
+            <tr>
+                <td>{{ book.id }}</td>
+                <td>{{ book.bookName }}</td>
+                <td>{{ book.bookAuthor }}</td>
+                <td>{{ book.bookPrice }}</td>
+                <td>{{ book.bookGenre }}</td>
+                <td>{{ book.bookDesc }}</td>
+                <td><a href="{{ path('show_book', {id:book.id}) }}">Show Item</a></td>
+                <td><a href="{{ path('edit_book', {id:book.id}) }}">Edit Item</a></td>
+                <td><a href="{{ path('delete_book', {id:book.id}) }}">Delete Item</a></td>
+            </tr>
+    {% endfor %}
+    </table>
+    <a href="{{ path('create_book') }}">Add new book</a>
+</div>
+
+    {% for message in app.flashes('success') %}
+        <div>
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BookController!{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <table border="1">
+            <tr>
+                <td>{{ book.id }}</td>
+                <td>{{ book.bookName }}</td>
+                <td>{{ book.bookAuthor }}</td>
+                <td>{{ book.bookPrice }}</td>
+                <td>{{ book.bookGenre }}</td>
+                <td>{{ book.bookDesc }}</td>
+                <td><a href="{{ path('books') }}">Exit</a></td>
+            </tr>
+    </table>
+</div>
+{% endblock %}
