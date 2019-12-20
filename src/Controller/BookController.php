@@ -24,7 +24,7 @@ class BookController extends AbstractController
             ->findAll();
         if (!$books) {
             throw $this->createNotFoundException(
-                'No event found'
+                'No books found'
             );
         }
         return $this->render('book/index.html.twig', [
